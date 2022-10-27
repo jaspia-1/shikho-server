@@ -3,6 +3,12 @@ const app = express()
 const port = 5000
 const courses = require('./data/courses.json')
 const catagories = require('./data/catagory.json');
+app.get('/course/:id', (req, res) => {
+    const CatagoryId = req.params.id;
+    const catagoryCourse = courses.find(singlecourse => singlecourse.id === req.params.id);
+    res.send(catagoryCourse)
+
+})
 app.get('/courses/:id', (req, res) => {
     const CatagoryId = req.params.id;
     if (CatagoryId === 'all') {
