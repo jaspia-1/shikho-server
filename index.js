@@ -22,6 +22,9 @@ app.get('/courses/:id', (req, res) => {
         res.send(catagoryCourses)
     }
 })
+app.get('/catagory', (req, res) => {
+    res.send(catagories);
+})
 app.get('/allcourses', (req, res) => {
     res.send(courses)
 })
